@@ -4,6 +4,7 @@ import os
 import shutil
 import keyboard
 from datetime import datetime
+from PIL import Image, ImageGrab
 
 saves = "/Users/hi/Library/Application Support/minecraft/saves/"
 delay = 0.1 
@@ -48,5 +49,10 @@ if __name__ == "__main__":
     while True:
         keyboard.wait('shift+u')
         exitWorld()
-        time.sleep(0.5)
+        while True:
+            im = ImageGrab.grab(bbox = None)
+            if (im.getpixel((1334, 897)) != (113, 113, 113, 255)):
+                time.sleep(delay)
+            else:
+                break
         createWorld()
