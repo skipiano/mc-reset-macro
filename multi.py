@@ -17,18 +17,9 @@ pyautogui.PAUSE = 0
 control = Controller()
 
 def createWorld():
-    for folder in os.listdir(saves0):
+    for folder in os.listdir(saves):
         if folder[0] != '_':
-            shutil.move(saves0+folder, saves+"_oldWorlds/"+str(datetime.now()))
-    for folder in os.listdir(saves1):
-        if folder[0] != '_':
-            shutil.move(saves1+folder, saves+"_oldWorlds/"+str(datetime.now()))
-    for folder in os.listdir(saves2):
-        if folder[0] != '_':
-            shutil.move(saves2+folder, saves+"_oldWorlds/"+str(datetime.now()))
-    for folder in os.listdir(saves3):
-        if folder[0] != '_':
-            shutil.move(saves3+folder, saves+"_oldWorlds/"+str(datetime.now()))
+            shutil.move(saves+folder, saves+"_oldWorlds/"+str(datetime.now()))
     control.tap('tab')
     control.tap('enter')
     time.sleep(delay)
